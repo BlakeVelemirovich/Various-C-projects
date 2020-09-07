@@ -5,34 +5,40 @@ void pyramid(int height);
 
 int main(void)
 {
-
+    
     int height;
-
-    //Ask the user for input, if not between 1 and 8 then ask again until it is
+    
+    //Ask for height to be used in the pyramid
     do
     {
-        height = get_int("Height? (1-8): ");
+        height = get_int("Height?(1-8): ");
     }
     while (height < 1 || height > 8);
     
     pyramid(height);
-
 }
 
+//Function builds the pyramid
 void pyramid(int height)
-{
-    //nested for loop prints the dots, then the hash, then prints the line break
-    //Line break
+{   
+    //The loop that builds the pyramid, first loop creates new lines
     for (int i = 0; i < height; i++)
     {   
-        //space
+        //this loop creates spaces
         for (int s = height - 1; s > i; s--)
         {
-            printf(" "); 
+            printf(" ");
         }
-        //Hash
+        //this loop creates the left side hashes
         for (int n = 0; n <= i; n++)
-        {   
+        {
+            printf("#");
+        }
+        //creating the mandatory two spaces between the pyramid
+        printf("  ");
+        //this loop creates the right side hashes
+        for (int m = 0; m <= i; m++)
+        {
             printf("#");
         }
         printf("\n");
