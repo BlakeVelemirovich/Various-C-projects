@@ -36,8 +36,8 @@ int main(void)
     }
     ccount = ccount / 2;
     int x;
-    int y;
-    int z;
+    int y = 0;
+    int z = 0;
     //The sum of every other digit starting from the second last digit moving left multiplied by 2
     while (ccount != 0)
     {
@@ -72,11 +72,11 @@ int main(void)
     
     if (ccount3 == 13)
     {
-        visad = 10000000000;
+        visad = 1000000000000;
     }
     else if (ccount3 == 16)
     {
-        visad = 10000000000000;
+        visad = 1000000000000000;
     }
     else
     {
@@ -93,13 +93,16 @@ int main(void)
     {
         printf("MASTERCARD\n");
     }
-    else if (ccount3 == 15 && (amex = 34 || amex == 37))
+    else if (ccount3 == 15 && (amex == 34 || amex == 37))
     {
         printf("AMEX\n");
     }
-    else if ((ccount == 13 || ccount == 16) && visa == 4)
+    else if ((ccount3 == 13 || ccount3 == 16) && visa == 4)
     {
         printf("VISA\n");
     }
-    
+    else
+    {
+        printf("INVALID\n");
+    }
 }
